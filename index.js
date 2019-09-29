@@ -23,11 +23,11 @@ const fileAdapter =
 var dashboard = new ParseDashboard({
   "apps": [
     {
-      "serverURL": process.env.SERVER_URL || 'http://localhost:1337/parse',
+      "serverURL": process.env.SERVER_URL || `http://localhost:${process.env.PORT || 1337}/parse`,
       "appId": process.env.APP_ID || 'myAppId',
       "masterKey": process.env.MASTER_KEY || '',
       "appName": process.env.APP_NAME || "MyApp",
-      "graphQLServerURL": process.env.GRAPHQL_URL || "http://localhost:1337/graphql",
+      "graphQLServerURL": process.env.GRAPHQL_URL || `http://localhost:${process.env.PORT || 1337}/graphql`,
     }
   ],
   "users": [
@@ -43,7 +43,7 @@ var api = new ParseServer({
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
-  serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',
+  serverURL: process.env.SERVER_URL || `http://localhost:${process.env.PORT || 1337}/parse`,
   javascriptKey: process.env.JAVASCRIPT_KEY || '',
   ...fileAdapter
 });
