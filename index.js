@@ -27,7 +27,7 @@ var dashboard = new ParseDashboard({
       "appId": process.env.APP_ID || 'myAppId',
       "masterKey": process.env.MASTER_KEY || '',
       "appName": process.env.APP_NAME || "MyApp",
-      "graphQLServerURL": process.env.GRAPHQL_URL || `http://localhost:${process.env.PORT || 1337}/graphql`,
+     // "graphQLServerURL": process.env.GRAPHQL_URL || `http://localhost:${process.env.PORT || 1337}/graphql`,
     }
   ],
   "users": [
@@ -63,17 +63,9 @@ var app = express();
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api.app);
-parseGraphQLServer.applyGraphQL(app); // Mounts the GraphQL API
+//parseGraphQLServer.applyGraphQL(app); // Mounts the GraphQL API
 
 app.use(process.env.DASHBOARD_MOUNT || '/dashboard', dashboard);
-
-
-
-// There will be a test page available on the /test path of your server url
-// Remove this before launching your app
-/*app.get('/test', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/test.html'));
-});*/
 
 var port = process.env.PORT || 1337;
 var httpServer = require('http').createServer(app);
