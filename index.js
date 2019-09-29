@@ -19,7 +19,7 @@ const fileAdapter =
   "S3_BUCKET",
   {directAccess: true}
 )} : {};
-
+var options = { allowInsecureHTTP: true };
 var dashboard = new ParseDashboard({
   "apps": [
     {
@@ -36,7 +36,7 @@ var dashboard = new ParseDashboard({
       "pass": process.env.DASHBOARD_PASSWORD || "toor"
     }
   ]
-});
+}, options);
 var api = new ParseServer({
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
   appName: process.env.APP_NAME || "MyApp",
