@@ -32,8 +32,8 @@ var dashboard = new ParseDashboard({
   ],
   "users": [
     {
-      "user": process.env.DASSHBOARD_USER || "root",
-      "pass": process.env.DASSHBOARD_PASSWORD || "toor"
+      "user": process.env.DASHBOARD_USER || "root",
+      "pass": process.env.DASHBOARD_PASSWORD || "toor"
     }
   ]
 });
