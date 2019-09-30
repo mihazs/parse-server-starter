@@ -3,23 +3,15 @@
   "version": "1.4.0",
   "description": "An example Parse API server using the parse-server module",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ParsePlatform/parse-server-example"
-  },
   "license": "MIT",
   "dependencies": {
-    "express": "~4.11.x",
+    "express": "^4.17.1",
     "kerberos": "~0.0.x",
     "parse": "~1.8.0",
-    "parse-server": "*"
+    "parse-server": "^3.8.0"
   },
   "scripts": {
     "start": "node index.js"
-  },
-  "resolutions": {
-    "graphql": "^14.5.4",
-    "**/graphql": "^14.5.4"
   },
   "engines": {
     "node": ">=4.3"
